@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="citizen.css">
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-left">
+      <nav>
+        <a href="" class="home"> Home</a>
+        
+        
+          <!--Tab to edit-->
+        <a href="http://localhost:7700/Citizen.gravience/aboutMe.html" class="home">
+          About me
+        </a>
+        </nav>
+      
+    </div>
+    <div class="header-right">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEpElEQVR4nM2a209cRRjAT/TBF60PRn1Wou/qH2AiJcywBVtr00LaJsb4pv4JYmJjfPGy1miqdmeWSwuHM3OAhcU2gm2VLrekWpq2qLC9gK1AAYuXxzHfYbcs7JzLnN0zhy/5kk12v5P5nfnmu8y3hhGRNH7T9zSivCZB7ZdA4XNdG3vK2Mmy+4T5OCb2Xkx5EhM2jilfw5QLmSLKVgu/SYINas/uinv9Bk6xOkz5aUz5f24L91NE+L/wjP"></img>
+      <p class="home">  हेल्प के लिए कॉल करे</p>
+    </div>
+  </div>
+
+  <!-- Main Div (contains form) -->
+  <div class="main-div" id="mainDiv">
+    <!-- Hero Section with Blue Circle -->
+    <div class="hero">
+      <div class="circle">
+        <img src="girl.png" alt="Upset Girl" class="girl-image">
+      </div>
+    </div>
+
+    <div class="search-bar"> 
+      <div class="search-container">
+        <input type="text" id="searchBar" placeholder="अपनी शिकायत Id डालें" required>
+        <button class="button" onclick="searchID()">Search</button>
+      </div>
+    </div>
+
+    <!-- Divider Text -->
+    <div class="divider">
+      <p id="or">या फिर</p>
+    </div>
+
+    <!-- Heading -->
+    <h2 class="form-heading">नई शिकायत दर्ज करने के लिए</h2>
+
+    <!-- Form Container -->
+    <div class="form-container">
+      <form id="complaintForm">
+        <div class="form-group">
+          <label for="block">ब्लॉक चुनें:</label>
+          <select id="block" required>
+            <option value="">ब्लॉक चुनें</option>
+            <option value="sadari_khedi">सदरी खेड़ी</option>
+            <option value="sulphurkheda">सुलफरखेड़ा</option>
+            <option value="punarwas">पुनर्वास</option>
+            <option value="baliyakhedi">बलियाखेड़ी</option>
+            <option value="nanota">नानोता</option>
+            <option value="deoband">देवबंद</option>
+            <option value="rampur">रामपुर</option>
+            <option value="nagal">नागल</option>
+            <option value="nukud">नुकुड़</option>
+            <option value="sarsawa">सहारनपुर</option>
+            <option value="gangoh">गंगोह</option>
+            <option value="behat">बहेत</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <input type="text" id="name" placeholder="अपना नाम भरें" required>
+        </div>
+        <div class="form-group">
+          <input type="number" id="number" placeholder="फोन नंबर" min="1000000000" max="9999999999" required>
+        </div>
+        <div class="form-group">
+          <label for="department">शिकायत की डिपार्टमेंट से है :</label>
+          <select id="department" required>
+            <option value="police">पुलिस</option>
+            <option value="public_works">लोक निर्माण विभाग</option>
+            <option value="corporation">निगम</option>
+            <option value="water">जल विभाग</option>
+            <option value="electricity">बिजली विभाग</option>
+            <option value="education">शिक्षा विभाग</option>
+            <option value="health">स्वास्थ्य विभाग</option>
+            <option value="agriculture">कृषि विभाग</option>
+            <option value="transport">परिवहन विभाग</option>
+            <option value="social_welfare">समाज कल्याण विभाग</option>
+            <option value="women_child_development">महिला एवं बाल विकास</option>
+            <option value="labor">श्रम विभाग</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <textarea id="complaint" placeholder="शिकायत लिखें" required></textarea>
+        </div>
+        <button class="submit" type="submit">दर्ज करें</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Message Div (hidden until form is submitted) -->
+  <div class="message-container hidden" id="messageDiv">
+    <h2>आपकी शिकायत दर्ज़ कर ली गई है।</h2>
+    <h2>आपकी शिकायत ID है: </h2>
+    <h1 id="ID"></h1>
+  </div>
+
+  <div id="messageDiv2" class="hidden2">
+    <p>* अभी आपकी शिकायत पर कार्यवाही होनी बाकी हैं कृप्या कुछ दिन बाद दोबारा चेक करे !</p>
+  </div>
+
+  <div id="response">
+    <div id="result"></div>
+    <h1 id="result-id"></h1>
+  </div>
+
+  <script src="citizen.js"></script>
+
+</body>
+
+</html>
